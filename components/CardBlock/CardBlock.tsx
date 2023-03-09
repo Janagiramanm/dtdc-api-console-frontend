@@ -66,37 +66,47 @@ const renderCustomizedLabel = ({
 
             </div>
 
-
-            <div className={styles.CardBlock}>
-                <div className={`container-fluid`}>
-                    <div className={`row`}>
-                        <div className={`col-3`}>
-                            <div className={styles.card}>
-                                <h4>10000/12212</h4>
-                                <p>API Available Count</p>
+            <div className={`container-fluid`}>
+                <h3>Customer List </h3>
+                <table className="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Customer Name </th>
+                        <th scope="col">Customer Type</th>
+                        <th scope="col">Count</th>
+                        <th scope="col">Quota Status</th>
+                        <th scope="col">Contract Expired</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>2123123</td>
+                        <td>
+                            <div className="progress" role="progressbar" aria-label="Animated striped example"
+                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div className="progress-bar progress-bar-striped w-75 progress-bar-animated"
+                                ></div>
                             </div>
-                        </div>
-                        <div className={`col-3`}>
-                            <div className={styles.card}>
-                                <h4>10000/12212</h4>
-                                <p>API Available Count</p>
-                            </div>
-                        </div>
-                        <div className={`col-3`}>
-                            <div className={styles.card}>
-                                <h4>10000/12212</h4>
-                                <p>API Available Count</p>
-                            </div>
-                        </div>
-                        <div className={`col-3`}>
-                            <div className={styles.card}>
-                                <h4>10000/12212</h4>
-                                <p>API Available Count</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        </td>
+                        <td>Otto</td>
+                        <td>
+                            <div className="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" className="btn btn-sm btn-primary">Expired</button>
+                                <button type="button" className="btn btn-sm btn-secondary">Active</button>
+                            </div></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+
+
+
+
         </div>
     )
 }
