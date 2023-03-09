@@ -1,0 +1,29 @@
+.sideNav{
+  width: 5rem;
+  background: #E5E9F2;
+  padding: 10px;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  justify-content: space-between;
+  align-items: center;
+  .middleMenu{
+    margin-top: 240px;
+    li{
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+  .bottomMenu{
+    li{
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+}

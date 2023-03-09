@@ -1,0 +1,23 @@
+.LoginForm{
+  background: linear-gradient(180deg, #E5E9F2 0%, #E5E9F2 49.52%, #0E2C53 49.52%, #0E2C53 100%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  h3{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .LoginLogo{
+    text-align: center;
+  }
+  .LoginCard{
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+  }
+}
