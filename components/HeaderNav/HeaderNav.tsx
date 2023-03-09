@@ -1,3 +1,4 @@
+import next from "next";
 import styles from "./HeaderNav.module.scss"
 import Link from "next/link";
 

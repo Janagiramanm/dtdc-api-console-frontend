@@ -1,6 +1,7 @@
+import next from "next";
 import styles from "./CardBlock.module.scss";
 import React, { useCallback, useState } from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
 const data = [
     { name: "Group A", value: 400 },
@@ -43,6 +44,7 @@ const renderCustomizedLabel = ({
                 <div className={`col-md-6 p-4`}>
                 </div>
                 <div className={`col-md-6 p-4`}>
+                <ResponsiveContainer width="100%" height={400}>
                     <PieChart width={400} height={400}>
                         <Pie
                             data={data}
@@ -59,6 +61,7 @@ const renderCustomizedLabel = ({
                             ))}
                         </Pie>
                     </PieChart>
+                    </ResponsiveContainer>
                 </div>
 
             </div>

@@ -1,3 +1,4 @@
+import next from "next";
 import Head from 'next/head'
 import SideNav from "../../components/SideNav/SideNav";
 import HeaderNav from "../../components/HeaderNav/HeaderNav";
