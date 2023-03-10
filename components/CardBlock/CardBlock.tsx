@@ -3,6 +3,7 @@ import styles from "./CardBlock.module.scss";
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 
+
 const data = [
     { name: "Group A", value: 400 },
     { name: "Group B", value: 300 },
@@ -37,7 +38,11 @@ const renderCustomizedLabel = ({
     );
 };
 
-    export default function CardBlock() {
+    export default function CardBlock({customerList}: any) {
+
+        console.log('PRORPS==',customerList)
+        const [usedCount, setUsedCount] = useState(customerList);
+        // let usedCount1;
     return (
         <div>
             <div className={`row`}>
@@ -74,32 +79,36 @@ const renderCustomizedLabel = ({
                         <th scope="col">Customer ID</th>
                         <th scope="col">Customer Name </th>
                         <th scope="col">Customer Type</th>
-                        <th scope="col">Count</th>
+                        <th scope="col">Avail/ Total Count</th>
                         <th scope="col">Quota Status</th>
                         <th scope="col">Contract Expired</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>2123123</td>
-                        <td>
-                            <div className="progress" role="progressbar" aria-label="Animated striped example"
-                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                <div className="progress-bar progress-bar-striped w-75 progress-bar-animated"
-                                ></div>
-                            </div>
-                        </td>
-                        <td>Otto</td>
-                        <td>
-                            <div className="btn-group" role="group" aria-label="Basic example">
+                    {customerList?.map((element:any, index:any)=> {
+                        let usage = element.used_count / element.api_count * 100; // Modify the variable inside the map function
+                        return (
+                            <tr key={index}>
+                            <td>{element.customer_id}</td>
+                            <td>{element.customer_name}</td>
+                            <td>{element.customer_category}</td>
+                            <td> {element.available_count}/{element.api_count}</td>
+                            <td>
+                                <div className="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div className="progress-bar progress-bar-striped progress-bar-animated" style={{ width:usage+`%` }}></div>
+                                </div>
+                            </td>
+                            <td>{element.expiry_date}</td>
+                            <td>
                                 <button type="button" className="btn btn-sm btn-primary">Expired</button>
                                 <button type="button" className="btn btn-sm btn-secondary">Active</button>
-                            </div></td>
-                    </tr>
+                            </td>
+                            </tr>
+                        );
+                        })}
+                   
+                    
                     </tbody>
                 </table>
             </div>
@@ -110,3 +119,6 @@ const renderCustomizedLabel = ({
         </div>
     )
 }
+
+
+
