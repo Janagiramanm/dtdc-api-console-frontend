@@ -22,28 +22,27 @@ export default function Home(props:any) {
               <SideNav/>
               <div className={`RightPanel`}>
                   <HeaderNav/>
-                  {/*<CardBlock customerList={props.res.data}/>*/}
-                  <CardBlock customerList={[]}/>
+                  <CardBlock customerList={props.res.data}/>
               </div>
           </div>
       </main>
     </>
   )
 }
-// export async function getServerSideProps() {
-//
-//   const baseUrl = new ApiService();
-//   const response = await fetch(baseUrl.getBaseUrl() + `/get-customer-data`);
-//   const res = await response.json();
-//
-//    return { props: {res}}
-//
-// //   if (res && res.length > 0) {
-// //     const data = res;
-// //       return { props: { data} }
-// //   } else {
-// //       return {
-// //           props: {}
-// //       }
-// //   }
-// }
+export async function getServerSideProps() {
+
+  const baseUrl = new ApiService();
+  const response = await fetch(baseUrl.getBaseUrl() + `/get-customer-data`);
+  const res = await response.json();
+
+   return { props: {res}}
+
+//   if (res && res.length > 0) {
+//     const data = res;
+//       return { props: { data} }
+//   } else {
+//       return {
+//           props: {}
+//       }
+//   }
+}
