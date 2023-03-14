@@ -2,6 +2,7 @@ import next from "next";
 import styles from "./CardBlock.module.scss";
 import React, { useCallback, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import ChartOne from "../ChartOne/ChartOne";
 
 
 const data = [
@@ -43,10 +44,10 @@ const renderCustomizedLabel = ({
         console.log('PRORPS==',customerList)
         const [usedCount, setUsedCount] = useState(customerList);
         // let usedCount1;
-    return (
-        <div>
+    return (<div>
             <div className={`row`}>
                 <div className={`col-md-6 p-4`}>
+                    <ChartOne/>
                 </div>
                 <div className={`col-md-6 p-4`}>
                 <ResponsiveContainer width="100%" height={400}>
@@ -71,8 +72,8 @@ const renderCustomizedLabel = ({
 
             </div>
 
-            <div className={`container-fluid`}>
-                <h3>Customer List </h3>
+            <div className={`container-fluid px-4`}>
+                <h4 className={`pb-4`}>Customer List </h4>
                 <table className="table">
                     <thead>
                     <tr>
@@ -96,7 +97,7 @@ const renderCustomizedLabel = ({
                             <td> {element.available_count}/{element.api_count}</td>
                             <td>
                                 <div className="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                <div className="progress-bar progress-bar-striped progress-bar-animated" style={{ width:usage+`%` }}></div>
+                                    <div className="progress-bar progress-bar-striped progress-bar-animated" style={{ width:usage+`%` }}></div>
                                 </div>
                             </td>
                             <td>{element.expiry_date}</td>
@@ -107,8 +108,6 @@ const renderCustomizedLabel = ({
                             </tr>
                         );
                         })}
-                   
-                    
                     </tbody>
                 </table>
             </div>
