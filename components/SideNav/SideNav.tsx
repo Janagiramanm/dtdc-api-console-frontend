@@ -10,7 +10,7 @@ export default function SideNav() {
                             <Link href={`#`}><img src={`/images/dashboard.svg`} /></Link>
                         </li>
                         <li>
-                            <Link href={`#`}><img src={`/images/users.svg`} /></Link>
+                            <Link href={`/create-user`}><img src={`/images/users.svg`} /></Link>
                         </li>
                         <li>
                             <Link href={`#`}><img src={`/images/rate.svg`} /></Link>
